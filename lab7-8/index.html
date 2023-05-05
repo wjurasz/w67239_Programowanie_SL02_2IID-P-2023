@@ -1,62 +1,92 @@
+
 <!DOCTYPE html>
 <html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+
+<head>
+    <meta charset="utf-8" />
     <style>
-    input {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        background-color:lightblue;
-        text-align:center;
-    }
-</style>
-  </head>
-  <body>
-    <form action="submit-form.php" method="post" style="text-align: center;">
-      <label for="firstName">Imię:</label>
-      <input type="text" id="firstName" name="firstName" required /><br></br>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: beige;
+        }
 
-      <label for="lastName">Nazwisko:</label>
-      <input type="text" id="lastName" name="lastName" required /><br></br>
+        form {
+            width: 300px;
+            padding: 20px;
+            background-color: lightblue;
+            border-radius: 20px;
+        }
 
+        .control {
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+        }
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required /><br></br>
+        .actions {
+            justify-content: center;
+        }
+    </style>
+</head>
 
+<body>
+    <form class="form" id="form" name="form">
+        <div class="control">
+            <label>Imie </label>
+            <input type="text" name="name" id="imie" minlength="2" required>
+        </div>
+        <div class="control">
+            <label>Nazwisko </label>
+            <input type="text" name="surname" id="surname" minlength="2" required>
+        </div>
+        <div class="control">
+            <label>Email: </label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        <div class="control">
+            <label>Hasło: </label>
+            <input type="password" id="password" name="password" minlength="8" required>
+        </div>
+        <div class="control">
+          <label>Powtórz hasło: </label>
+          <input type="repeat_password" id="repeat_password" name="repeat_password">
+      </div>
+        <div class="control">
+            <label>Płeć:</label>
+            <div>
+                <input type="radio" id="m" name="sex" value="m" required>
+                <label for="m">M</label>
+                <input type="radio" id="k" name="sex" value="k" required>
+                <label for="k">K</label>
+        </div>
+        <div class="control">
+            <label>Telefon: </label>
+            <input type="tel" name="phone" id="phone" minlength="9" maxlength="9" required>
+        </div>
+        <div class="control">
+            <label>Data urodzenia: </label>
+            <input type="date" id="birthDate" name="birthDate" required>
+        </div>
+        <div class="control">
+            <label>Kraj: </label>
+            <select name="country" required>
+                <option></option>
+                <option value="Polska">Polska</option>
+                <option value="Ukraina">Ukraina</option>
+                <option value="Litwa">Litwa</option>
+                <option value="Niemcy">Niemcy</option>
+            </select>
+        </div>
 
-      <label for="password">Hasło:</label>
-      <input type="password" id="password" name="password" required /><br></br>
-
-
-      <label for="gender">Płeć:</label>
-      <select id="gender" name="gender" required>
-        <option value="male">Mężczyzna</option>
-        <option value="female">Kobieta</option>
-        <option value="other">Inna</option>
-      </select><br></br>
-
-
-      <label for="phone">Telefon:</label>
-      <input type="tel" id="phone" name="phone" required /><br></br>
-
-
-      <label for="birthdate">Data urodzenia:</label>
-      <input type="date" id="birthdate" name="birthdate" required /><br></br>
-
-
-      <label for="country">Kraj:</label>
-      <input type="text" id="country" name="country" required /><br></br>
-
-
-      <button type="submit">Zapisz</button>
+        <div class="control actions">
+            <input type="submit" value="Zapisz">
+        </div>
     </form>
-  </body>
+    <script src="index.js"></script>
+</body>
+
 </html>
